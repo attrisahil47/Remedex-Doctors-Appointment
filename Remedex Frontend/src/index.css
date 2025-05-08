@@ -1,0 +1,819 @@
+@import "tailwindcss";
+
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+* {
+  @apply box-border m-0 p-0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  @apply bg-[#4c5d79] sticky top-0 z-50 px-5 py-2.5;
+}
+
+nav ul {
+  @apply list-none flex justify-between;
+}
+
+nav ul li a {
+  @apply text-white no-underline text-[22px] hover:bg-white hover:text-[black] p-[15px] hover:p-[15px] transition-all;
+}
+
+.logo {
+  @apply h-16 w-16 object-contain rounded-full;
+}
+
+#sp1 {
+  @apply text-lg sm:text-2xl font-bold text-white ml-4;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  @media (max-width: 768px) {
+    nav .desktop-menu {
+      @apply hidden;
+    }
+  }
+
+  nav ul li a {
+    @apply text-[16px] hover:text-black; /* Adjust text size for mobile */
+  }
+
+  nav button {
+    @apply p-2;
+  }
+
+  nav ul li a:hover {
+    @apply bg-white text-black;
+  }
+}
+
+
+
+.banner {
+  @apply w-full h-[750px] relative flex justify-center items-center overflow-hidden;
+}
+#h1 {
+  @apply text-[50px] text-[black];
+}
+#p1 {
+  @apply text-[25px] text-[black];
+}
+.banner-img {
+  @apply w-full h-full bg-cover absolute;
+}
+.banner-text {
+  @apply text-white text-left relative pr-[700px] rounded-lg;
+}
+
+
+.my-swiper {
+  @apply w-full h-[300px] md:h-[500px] lg:h-[700px] xl:h-[900px];
+}
+
+.slide-image {
+  @apply w-full h-full object-cover rounded-lg shadow-lg;
+}
+
+
+/* Feature Section Title */
+.section-title {
+  @apply text-center text-4xl font-bold text-gray-800 mb-12;
+}
+
+/* Main Section */
+.features-section {
+  @apply py-16 px-4 bg-gradient-to-br from-white via-[#f0f4ff] to-white;
+}
+
+/* Feature Card */
+.feature-card {
+  @apply bg-white p-8 rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl hover:-translate-y-1;
+}
+
+/* Icon Wrapper */
+.icon-wrapper {
+  @apply w-16 h-16 flex items-center justify-center rounded-full mb-6 transition-transform;
+}
+
+/* Card Heading */
+.feature-card h3 {
+  @apply text-xl font-semibold text-gray-800 mb-2;
+}
+
+/* Card Paragraph */
+.feature-card p {
+  @apply text-gray-600 text-base;
+}
+
+
+/* Why Choose Us Section */
+.why-choose-us-section {
+  @apply py-16 px-4 bg-gradient-to-br from-[#f4f4f4] via-[#fafafa] to-[#f4f4f4];
+}
+
+/* Card Container */
+.choose-card {
+  @apply bg-white p-8 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+/* Card Headings */
+.choose-card h4 {
+  @apply text-xl font-semibold text-gray-800 mb-2;
+}
+
+/* Card Text */
+.choose-card p {
+  @apply text-gray-600 text-base;
+}
+
+/* Icon Style */
+.icon-container {
+  @apply w-12 h-12 rounded-full flex items-center justify-center mb-4 mx-auto text-xl;
+}
+
+/* Testimonials */
+.testimonial-section {
+  @apply py-16 px-4 bg-gradient-to-br from-white via-[#f0f4ff] to-white;
+}
+.testimonial-card {
+  @apply bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-1;
+}
+
+.testimonial-card img {
+  @apply w-12 h-12 rounded-full object-cover;
+}
+
+/* Call to Action Section */
+/* .cta {
+  @apply bg-[#4c5d79] text-white text-center px-5 py-[50px];
+}
+.cta h2 {
+  @apply text-[32px] mb-5;
+}
+.cta p {
+  @apply text-lg mb-[30px];
+}
+.cta-button {
+  @apply inline-block bg-[#ffcb47] text-[#333] rounded text-lg no-underline font-[bold] transition-[background-color] duration-[0.3s] ease-[ease] px-[30px] py-[15px] hover:bg-[#ffaa00];
+} */
+
+/* Footer Section */
+.footer-links {
+  @apply flex justify-center flex-wrap gap-2 mt-2;
+}
+.footer-links a {
+  @apply text-white no-underline hover:underline;
+}
+
+/* ---------- Hero Section ---------- */
+.about-hero {
+  @apply text-white text-center px-5 py-[60px] rounded-[0_0_20px_20px];
+  background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+  /* No margin-top so it sits flush under the navbar */
+  animation: fadeIn 0.8s ease-out forwards;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframes using plain CSS properties */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  @apply text-5xl mb-4 font-bold;
+}
+.hero-content p {
+  @apply text-xl;
+}
+
+/* ---------- About Container ---------- */
+.about-container {
+  @apply max-w-[900px] text-center mx-auto my-[50px] p-[20px] sm:p-[30px];
+}
+.about-container h1 {
+  @apply text-4xl text-[#333] mb-2.5;
+}
+.about-container p {
+  @apply text-lg text-[#555] leading-[1.6];
+}
+.about-container h2 {
+  @apply text-[28px] sm:text-[35px] mt-5;
+}
+
+/* ---------- Team Section ---------- */
+.team-section {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-[#f8f9fa] mt-[30px] rounded-[15px] p-4;
+}
+
+.team_member {
+  @apply w-full max-w-[250px] mx-auto text-center;
+}
+
+.team_member img {
+  @apply w-[150px] h-[200px] mx-auto shadow-[5px_5px_15px_rgba(0,0,0,0.3)] rounded-[5%] border-[5px] border-solid border-[#4c5d79] transition-transform duration-300;
+}
+
+.team_member img:hover {
+  @apply shadow-[10px_10px_20px_rgba(0,0,0,0.5)] scale-110 border-[#ff5733];
+}
+
+
+/* ---------- Auth Hero Section ---------- */
+.auth-hero {
+  @apply text-white text-center px-5 py-[60px] rounded-b-[20px] shadow-[0_4px_10px_rgba(0,0,0,0.1)];
+  background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+  animation: fadeIn 0.8s ease-out forwards;
+  /* No top margin here so it sits flush under navbar */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  @apply text-5xl font-bold mb-4;
+}
+.hero-content p {
+  @apply text-xl;
+}
+
+/* ---------- Auth Page Wrapper ---------- */
+.auth-page {
+  @apply mt-[var(--navbar-height)] py-10 px-5;
+  /* Ensures content starts below the fixed navbar */
+}
+
+/* ---------- Auth Container (Login/Signup) ---------- */
+.auth-container, .signup-container {
+  @apply max-w-[700px] bg-white shadow-[2px_2px_10px_rgba(0,0,0,0.3)] mx-auto p-[30px] rounded-lg;
+}
+.auth-container h1, .signup-container h1 {
+  @apply text-center text-[#333] mb-5;
+}
+
+/* ---------- Auth Form Styling ---------- */
+.auth-form, .signup-form {
+  @apply flex flex-col;
+}
+.auth-form label, .signup-form label {
+  @apply text-[#333] text-base mb-[5px];
+}
+.auth-form input, .signup-form input {
+  @apply border rounded text-base mb-[15px] p-2.5 border-solid border-[#ccc];
+}
+.auth-form button, .signup-form button {
+  @apply bg-[#007bff] text-white rounded text-base cursor-pointer transition-[background-color] duration-[0.3s] ease-[ease] p-2.5 border-[none] hover:bg-[#0056b3];
+}
+
+/* ---------- Additional Link Styling ---------- */
+.toggle-link, .extra-link {
+  @apply text-center text-sm mt-2.5;
+}
+.toggle-link a, .extra-link a {
+  @apply text-[#007bff] no-underline hover:underline;
+}
+
+/* ---------- Blog Hero Section ---------- */
+.blog-hero {
+  @apply text-white text-center shadow-[0_4px_10px_rgba(0,0,0,0.1)] px-5 py-[60px] rounded-[0_0_20px_20px];
+  background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+  /* margin-top: var(--navbar-height); Ensure hero starts below navbar */
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Use standard CSS in keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  @apply text-5xl mb-2.5;
+}
+.hero-content p {
+  @apply text-xl;
+}
+
+/* ---------- Blog Page Container ---------- */
+.blog-container {
+  @apply max-w-[1200px] bg-white mx-auto my-5 p-5;
+}
+
+/* Blog Page Title */
+.blog-page-title {
+  @apply text-center text-4xl text-[#333] mb-5;
+}
+
+/* ---------- Blog Grid Layout ---------- */
+.blog-grid {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5;
+}
+
+/* ---------- Blog Card Styling ---------- */
+.blog-card {
+  @apply bg-white border overflow-hidden shadow-[2px_2px_8px_rgba(0,0,0,0.1)] transition-shadow duration-[0.3s] ease-[ease] rounded-lg border-solid border-[#ddd] hover:shadow-[2px_2px_15px_rgba(0,0,0,0.2)];
+}
+.blog-card-img {
+  @apply w-full h-[200px] object-cover;
+}
+.blog-card-content {
+  @apply p-[15px];
+}
+.blog-card-title {
+  @apply text-2xl text-[#4c5d79] mb-2.5;
+}
+.blog-card-text {
+  @apply text-base text-[#555] leading-normal mb-[15px];
+}
+.blog-card-link {
+  @apply inline-block bg-[color:var(--primary-color)] text-white no-underline rounded transition-[background-color] duration-[0.3s] ease-[ease] px-[15px] py-2.5 hover:bg-[color:var(--hover-color)];
+}
+
+/* ---------- Footer ---------- */
+.blog-footer {
+  @apply bg-[color:var(--primary-color)] text-white text-center mt-10 p-5;
+}
+.blog-footer p {
+  @apply text-base mb-2.5;
+}
+.blog-footer-links a {
+  @apply text-white no-underline transition-[text-decoration] duration-[0.3s] ease-[ease] mx-[5px] my-0 hover:underline;
+}
+
+
+:root {
+  --primary-color: #4c5d79;
+  --hover-color: #3b4a63;
+  --accent-color: #ff5733;
+  --bg-color: #fff;
+  --text-color: #333;
+  --navbar-height: 80px;
+}
+
+/* Reset margins */
+html,
+body {
+  @apply m-0 p-0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------- Fixed Navbar ---------- */
+header {
+  @apply fixed w-full h-[var(--navbar-height)] bg-[color:var(--primary-color)] z-[10000] flex items-center shadow-[0_2px_4px_rgba(0,0,0,0.1)] px-5 py-0 left-0 top-0;
+}
+.navbar-links {
+  @apply flex flex-1 justify-center m-0 p-0;
+  list-style: none;
+}
+.navbar-links li {
+  @apply mx-[15px] my-0;
+}
+.navbar-links li a {
+  @apply text-white no-underline text-lg leading-[var(--navbar-height)] transition-[color] duration-[0.3s] ease-[ease] px-2.5 py-0;
+}
+.navbar-links li a:hover,
+.navbar-links li a.active {
+  @apply text-[color:var(--accent-color)];
+}
+
+/* ---------- Main Content Wrapper ---------- */
+.main-content {
+  @apply mt-[var(--navbar-height)] p-5;
+  background: linear-gradient(135deg, #f9f9f9, #fff);
+}
+
+/* ---------- Hero Section ---------- */
+.doctor-hero {
+  @apply text-white text-center shadow-[0_4px_10px_rgba(0,0,0,0.1)] px-5 py-[60px] rounded-[0_0_20px_20px];
+  background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+  /* Updated animation without @apply inside keyframes */
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem); /* Tailwind's translate-y-5 */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  @apply text-5xl mb-2.5;
+}
+.hero-content p {
+  @apply text-xl;
+}
+
+/* ---------- Search Section ---------- */
+.doctor-search {
+  @apply text-center mx-0 my-[30px];
+}
+.search-form {
+  @apply inline-flex w-full max-w-[600px] border overflow-hidden transition-shadow duration-[0.3s] ease-[ease] rounded-lg border-solid border-[#ccc] focus-within:shadow-[0_0_8px_var(--primary-color)];
+}
+.search-input {
+  @apply flex-1 text-base px-5 py-3 border-[none];
+  outline: none;
+}
+.search-btn {
+  @apply bg-[color:var(--primary-color)] text-white cursor-pointer transition-[background-color] duration-[0.3s] ease-[ease] px-5 py-3 border-[none] hover:bg-[color:var(--hover-color)];
+}
+
+/* ---------- Doctor List Section ---------- */
+.doctor-list {
+  @apply bg-[#f4f4f4] mx-0 my-10 p-5 rounded-[10px];
+}
+.section-title {
+  @apply text-center text-[32px] text-[color:var(--text-color)] mb-[30px];
+}
+
+/* Doctor Grid Layout */
+.doctor-grid {
+  @apply grid grid-cols-[repeat(4,1fr)] gap-5 px-5 py-0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .doctor-grid {
+    @apply grid-cols-[repeat(2,1fr)] px-[15px] py-0;
+  }
+}
+@media (max-width: 480px) {
+  .doctor-grid {
+    @apply grid-cols-[1fr] px-2.5 py-0;
+  }
+}
+
+/* Doctor Card Styling */
+.doctor-card {
+  @apply border overflow-hidden text-center shadow-[2px_2px_8px_rgba(0,0,0,0.1)] relative z-0 rounded-lg border-solid border-[#ddd] hover:shadow-[2px_2px_15px_rgba(0,0,0,0.2)] hover:scale-[1.02];
+  background: var(--bg-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Doctor Card Image */
+.doctor-img {
+  @apply w-full h-[380px] object-cover transition-transform duration-[0.3s] ease-[ease];
+}
+.doctor-card:hover .doctor-img {
+  @apply scale-105;
+}
+
+/* Doctor Card Info */
+.doctor-info {
+  @apply p-[15px];
+}
+.doctor-name {
+  @apply text-[22px] text-[color:var(--primary-color)] mb-[5px];
+}
+.doctor-specialty {
+  @apply text-lg text-[#555] mb-[5px];
+}
+.doctor-location {
+  @apply text-base text-[#777] mb-2.5;
+}
+.doctor-contact {
+  @apply bg-[color:var(--primary-color)] text-white rounded cursor-pointer transition-[background-color] duration-[0.3s] ease-[ease] px-5 py-2.5 border-[none] hover:bg-[color:var(--hover-color)];
+}
+
+/* ---------- Footer ---------- */
+footer {
+  @apply bg-[color:var(--primary-color)] text-white text-center mt-10 p-5 border-t-[#ddd] border-t border-solid;
+}
+.footer-links a {
+  @apply text-white no-underline transition-[text-decoration] duration-[0.3s] ease-[ease] mx-[5px] my-0 hover:underline;
+}
+
+.remedies-hero {
+  @apply text-white text-center shadow-[0_4px_10px_rgba(0,0,0,0.1)] px-5 py-[60px] rounded-[0_0_20px_20px];
+  background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+  /* Use keyframes fadeIn defined below */
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  @apply text-5xl mb-2.5;
+}
+.hero-content p {
+  @apply text-xl;
+}
+
+/* ---------- Overview Section ---------- */
+.remedies-overview {
+  @apply px-5 py-10;
+  background: #f9f9f9;
+}
+.overview-container {
+  @apply max-w-[900px] text-center mx-auto my-0;
+}
+.overview-container .section-title {
+  @apply text-[32px] text-[color:var(--text-color)] mb-5;
+}
+.overview-container p {
+  @apply text-lg text-[#555] leading-[1.6];
+}
+
+/* ---------- Remedies Cards Section ---------- */
+.remedies-list {
+  @apply px-5 py-10;
+  background: #f4f4f4;
+}
+.section-title {
+  @apply text-center text-[32px] text-[color:var(--text-color)] mb-[30px];
+}
+.remedies-grid {
+  @apply grid grid-cols-[repeat(4,1fr)] gap-5 px-5 py-0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .remedies-grid {
+    @apply grid-cols-[repeat(2,1fr)] px-[15px] py-0;
+  }
+}
+@media (max-width: 480px) {
+  .remedies-grid {
+    @apply grid-cols-[1fr] px-2.5 py-0;
+  }
+}
+
+/* ---------- Remedy Card Styling ---------- */
+.remedy-card {
+  @apply border overflow-hidden text-center shadow-[2px_2px_8px_rgba(0,0,0,0.1)] relative rounded-lg border-solid border-[#ddd] hover:shadow-[2px_2px_15px_rgba(0,0,0,0.2)] hover:scale-[1.02];
+  background: var(--bg-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.remedy-img {
+  @apply w-full h-[200px] object-cover transition-transform duration-[0.3s] ease-[ease];
+}
+.remedy-card:hover .remedy-img {
+  @apply scale-105;
+}
+.remedy-info {
+  @apply p-[15px];
+}
+.remedy-title {
+  @apply text-2xl text-[color:var(--primary-color)] mb-2.5;
+}
+.remedy-description {
+  @apply text-base text-[#555] leading-normal mb-[15px];
+}
+.remedy-link {
+  @apply inline-block bg-[color:var(--primary-color)] text-white no-underline rounded transition-[background-color] duration-[0.3s] ease-[ease] px-[15px] py-2.5 hover:bg-[color:var(--hover-color)];
+}
+
+/* ---------- Remedies Accordion Section ---------- */
+.remedies-details {
+  @apply px-5 py-10;
+  background: #fff;
+}
+.accordion {
+  @apply max-w-[900px] mx-auto my-0;
+}
+.accordion details {
+  @apply border transition-[background-color] duration-[0.3s] ease-[ease] mb-[15px] px-[15px] py-2.5 rounded-lg border-solid border-[#ddd];
+  background: #f9f9f9;
+}
+.accordion details[open] {
+  @apply shadow-[0_2px_8px_rgba(0,0,0,0.1)];
+  background: #fff;
+}
+.accordion summary {
+  @apply text-xl font-[bold] cursor-pointer;
+  outline: none;
+}
+.accordion p {
+  @apply text-base text-[#555] leading-[1.6] mt-2.5;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  @apply bg-[color:var(--primary-color)] text-white text-center mt-10 p-5 border-t-[#ddd] border-t border-solid;
+}
+.footer-links a {
+  @apply text-white no-underline transition-[text-decoration] duration-[0.3s] ease-[ease] mx-[5px] my-0 hover:underline;
+}
+
+/* ---------- Contact Hero Section ---------- */
+.contact-hero {
+  @apply text-white text-center px-5 py-16 rounded-b-2xl shadow-md;
+  background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  @apply text-5xl font-bold mb-4;
+}
+.hero-content p {
+  @apply text-xl;
+}
+
+/* ---------- Contact Page Wrapper ---------- */
+.contact-page {
+  /* @apply mt-[var(--navbar-height)] py-10 px-5 bg-gray-100; */
+}
+
+/* ---------- Contact Container ---------- */
+.contact-container {
+  @apply bg-[rgba(255,255,255,0.8)] p-8 rounded-lg shadow-lg backdrop-blur-md mx-auto max-w-[600px] text-center;
+}
+
+/* ---------- Form Styling ---------- */
+.contact-form {
+  @apply flex flex-col space-y-4;
+}
+.input-field {
+  @apply border rounded p-2 text-base border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300;
+}
+
+/* ---------- Auth Button Styling ---------- */
+.auth-btn {
+  @apply w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded transition-colors duration-300;
+}
+
+/* ---------- Contact Number ---------- */
+.contact-number {
+  @apply text-white text-sm mt-4;
+}
+
+
+/* ---------- Booking Hero Section ---------- */
+.booking-hero {
+  @apply text-white text-center px-5 py-16 rounded-b-2xl shadow-md;
+  background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content .hero-title {
+  @apply text-5xl font-bold mb-4;
+}
+
+.hero-content .hero-subtitle {
+  @apply text-xl;
+}
+
+/* ---------- Booking Page Wrapper ---------- */
+.booking-page {
+  @apply py-10 px-5 bg-gray-100 min-h-screen flex justify-center items-center;
+}
+
+/* ---------- Booking Container ---------- */
+.booking-container {
+  @apply max-w-lg w-full bg-white shadow-lg p-8 rounded-lg text-center;
+}
+
+.booking-title {
+  @apply text-4xl text-gray-800 mb-5;
+}
+
+/* ---------- Ant Design Form Overrides ---------- */
+.input-field {
+  @apply border rounded p-2 text-base border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300;
+}
+
+/* ---------- Booking Button ---------- */
+.booking-btn {
+  @apply w-full bg-[color:var(--primary-color)] text-white rounded p-3 text-lg cursor-pointer transition-colors duration-300;
+}
+.booking-btn:hover {
+  @apply bg-[color:var(--hover-color)];
+}
+
+
+/* ---------- Auth Hero Section ---------- */
+.auth-hero {
+  @apply text-white text-center px-5 py-16 rounded-b-[20px] shadow-md;
+  background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content .hero-title {
+  @apply text-5xl font-bold mb-4;
+}
+
+.hero-content .hero-subtitle {
+  @apply text-xl;
+}
+
+/* ---------- Auth Page Wrapper ---------- */
+.auth-page {
+  @apply py-10 px-5 flex justify-center items-center min-h-screen bg-gray-100;
+}
+
+
+/* ---------- Auth Container ---------- */
+.auth-container,
+.signup-container {
+  @apply max-w-[700px] w-full bg-white shadow-lg p-8 rounded-lg text-center;
+}
+
+.auth-header {
+  @apply text-4xl text-gray-800 mb-5;
+}
+
+/* ---------- Auth Form Styling ---------- */
+.auth-form,
+.signup-form {
+  @apply flex flex-col space-y-4;
+}
+
+.input-field {
+  @apply border rounded p-2.5 text-base border-solid border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300;
+}
+
+/* ---------- Auth Button ---------- */
+.auth-btn {
+  @apply w-full bg-[color:var(--primary-color)] text-white rounded p-3 text-lg cursor-pointer transition-colors duration-300;
+}
+.auth-btn:hover {
+  @apply bg-[color:var(--hover-color)];
+}
+
+/* ---------- Toggle Link ---------- */
+.extra-link {
+  @apply text-center text-sm mt-2.5;
+}
+.link {
+  @apply text-[color:var(--primary-color)] no-underline hover:underline;
+}
+
+
+
+
+
+
