@@ -1,7 +1,7 @@
 const User = require("../../Models/user.model");
 const BookingModel = require("../../Models/booking.model");
 const { bookingValidation } = require("../../Services/validation_schema");
-const sendEmail = require("../../utils/sendEmail"); // ✅ Import the email utility
+const sendBookingEmail = require("../../utils/sendBookingEmail"); // ✅ Import the email utility
 
 const bookingController = async (req, res, next) => {
   try {
@@ -34,7 +34,7 @@ const bookingController = async (req, res, next) => {
     // ✅ Send confirmation email
   
 
-    await sendEmail(emailAddress, fullName);
+    await sendBookingEmail(emailAddress, fullName, doctor, bookingDate, bookingTime);
 
     // ✅ Respond to client
     res.status(201).json({
