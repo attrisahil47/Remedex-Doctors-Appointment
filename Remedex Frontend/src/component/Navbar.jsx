@@ -1,3 +1,8 @@
+// 
+
+
+
+
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { Menu, X } from "lucide-react";
@@ -86,7 +91,7 @@ const Navbar = () => {
             <li>
               <button
                 onClick={handleLogout}
-                className="text-white text-[18px] hover:bg-white hover:text-black hover:px-4 hover:py-2 rounded"
+                className="text-white text-[18px] px-4 py-2 rounded hover:bg-white hover:text-black transition-all"
               >
                 Logout
               </button>

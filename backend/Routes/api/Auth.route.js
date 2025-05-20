@@ -21,6 +21,10 @@ const viewDoctors = require("../../Controller/auth/viewDoctors.js")
 const addDoctor = require("../../Controller/auth/addDoctor.js");
 const deleteDoctor = require("../../Controller/auth/deleteDoctor.js");
 const updateDoctor = require("../../Controller/auth/updateDoctor.js"); 
+const googleLogin = require("../../Controller/auth/googleLogin.js")
+const confirmBooking = require("../../Controller/auth/confirmBooking.js");
+const getDoctors = require("../../Controller/auth/getDoctors.js");
+const getBookings = require("../../Controller/auth/getBookings.js")
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -52,12 +56,16 @@ route.post("/booking", booking);
 route.post("/contact", contact);
 route.post("/feedback", feedback);
 route.post("/checkauth", checkAuth);
+route.get("/getDoctors", getDoctors)
 
 route.get("/getUser", getUser);
+route.get("/getBookings", getBookings)
 route.post("/addUsers", addUser);
 route.get("/getBookings", getBooking);
 route.get("/getContacts", getContact);
 route.get("/getFeedbacks", getFeedback);
+route.post("/google", googleLogin)
+route.post("/confirmBooking", confirmBooking)
 
 route.delete("/deleteUser/:id", deleteUser);
 route.put("/updateUser/:id", updateUser);

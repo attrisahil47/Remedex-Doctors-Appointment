@@ -8,13 +8,21 @@ const userSchema = new Schema(
     },
     emailAddress: {
       type: String,
-      required: true,
+    required: function () {
+          return !this.isGoogleUser; // Only required if not a Google user
+        },
       unique: true,
     },
-    password: {
-      type: String,
-      required: true,
-    },
+password: {
+        type: String,
+        required: function () {
+          return !this.isGoogleUser; // Only required if not a Google user
+        },
+      },
+      isGoogleUser: {
+        type: Boolean,
+        default: false,
+      },
     role: {
       type: String,
       // enum: ["user", "admin"], // Optional: restrict to allowed roles

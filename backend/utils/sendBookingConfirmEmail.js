@@ -46,7 +46,7 @@ const sendBookingEmail = async (emailAddress, fullName, doctor, bookingDate, boo
             </tr>
             <tr>
               <td style="padding: 8px; border: 1px solid #ddd;"><strong>Status:</strong></td>
-              <td style="padding: 8px; border: 1px solid #ddd;">Pending</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Confirmed</td>
             </tr>
           </table>
     

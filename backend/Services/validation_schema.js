@@ -63,6 +63,15 @@ const feedbackValidation = Joi.object({
       role: Joi.string().valid('admin', 'user'),
   })
 
+  const bookingSchema = Joi.object({
+  fullName: Joi.string().required(),
+  emailAddress: Joi.string().email().required(),
+  bookingDate: Joi.string().required(),
+  bookingTime: Joi.string().required(),
+  doctor: Joi.string().required(),
+});
+
+
   // validators/doctorValidation.js
 
 const doctorValidationSchema = Joi.object({
@@ -84,4 +93,4 @@ const doctorValidationSchema = Joi.object({
 
 
 
-module.exports = { signupValidation , loginValidation, contactValidationSchema,  bookingValidation, feedbackValidation, addUservalidation, doctorValidationSchema };
+module.exports = { signupValidation , loginValidation,bookingSchema, contactValidationSchema,  bookingValidation, feedbackValidation, addUservalidation, doctorValidationSchema };

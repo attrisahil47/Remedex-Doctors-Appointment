@@ -34,7 +34,7 @@ import ProtectedRoute from "../src/component/ProtectedRoute";
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
-  <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
+  <GoogleOAuthProvider clientId="166768133566-04ufqrfh2tre1nt5gppu3b9aahpu98vf.apps.googleusercontent.com">
     <AuthProvider>
       <BrowserRouter>
         <ToastContainer
