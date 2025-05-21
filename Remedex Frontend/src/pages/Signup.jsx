@@ -14,7 +14,7 @@ const Signup = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/signup", values);
+      const response = await axios.post("https://backend-7yvd.onrender.com/api/auth/signup", values);
 
       if (response.data.success) {
         toast.success("Registered successfully!", {
@@ -42,7 +42,7 @@ const Signup = () => {
     try {
       if (authResult.code) {
         const res = await axios.post(
-          `http://localhost:5000/api/auth/google?code=${authResult.code}`
+          `https://backend-7yvd.onrender.com/api/auth/google?code=${authResult.code}`
         );
 
         const { token, user } = res.data;

@@ -11,7 +11,7 @@ function Feedback() {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/feedback", values);
+      const response = await axios.post("https://backend-7yvd.onrender.com/api/auth/feedback", values);
       if (response.data.success) {
         toast.success("Your feedback has been submitted successfully!", {
           position: "top-right",

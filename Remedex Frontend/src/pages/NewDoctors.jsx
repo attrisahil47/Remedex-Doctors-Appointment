@@ -14,7 +14,7 @@ function NewDoctors() {
 
   const viewDoctors = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/auth/viewdoctors");
+      const response = await axios.get("https://backend-7yvd.onrender.com/api/auth/viewdoctors");
       setDoctors(response.data);
     } catch (error) {
       console.error(error.response?.data?.message || "Failed to view doctor!");
@@ -42,7 +42,7 @@ function NewDoctors() {
             className="border !p-4 rounded-lg shadow-md flex flex-col items-center text-center bg-white"
           >
             <img
-              src={`http://localhost:5000/uploads/${Doctor.photo}`}
+              src={`https://backend-7yvd.onrender.com/uploads/${Doctor.photo}`}
               alt="Doctor"
               className="h-[150px] w-[150px] object-cover rounded-full !mb-4"
             />

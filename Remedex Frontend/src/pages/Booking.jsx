@@ -13,7 +13,7 @@
 //     console.log("Booking Data:", values); // Log the booking data in the console
 
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/auth/booking", values);
+//       const response = await axios.post("https://backend-7yvd.onrender.com/api/auth/booking", values);
       
 //       if (response.data.success) {
 //         toast.success(" Booking confirmed successfully!", {
@@ -176,7 +176,7 @@ const Booking = () => {
     console.log("Booking Data:", values);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/booking", values);
+      const response = await axios.post("https://backend-7yvd.onrender.com/api/auth/booking", values);
 
       if (response.data.success) {
         toast.success("Booking confirmed successfully!", {

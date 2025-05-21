@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Contact() {
   const onFinish = async (values) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/contact", values);
+      const response = await axios.post("https://backend-7yvd.onrender.com/api/auth/contact", values);
       if (response.data.success) {
         toast.success(" Your message has been sent successfully!", {
           position: "top-right",
