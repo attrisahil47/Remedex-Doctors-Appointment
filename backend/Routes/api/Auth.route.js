@@ -58,6 +58,7 @@ route.post("/feedback", feedback);
 route.post("/checkauth", checkAuth);
 route.get("/getDoctors", getDoctors)
 
+
 route.get("/getUser", getUser);
 route.get("/getBookings", getBookings)
 route.post("/addUsers", addUser);

@@ -34,6 +34,7 @@ function Contact() {
   return (
     <>
       <Navbar />
+       
     
 
       {/* Hero Section */}
@@ -115,8 +116,10 @@ function Contact() {
           <p className="contact-number">
             You can also contact us at 181-1711-322
           </p>
+         
         </div>
       </div>
+      
 
       <Footer />
     </>
@@ -124,3 +127,5 @@ function Contact() {
 }
 
 export default Contact;
+
+

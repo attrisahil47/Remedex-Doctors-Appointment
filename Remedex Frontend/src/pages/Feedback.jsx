@@ -23,10 +23,10 @@ function Feedback() {
         });
         form.resetFields();
       } else {
-        message.error(response.data.message || "Something went wrong!");
+        toast.error(response.data.message || "Something went wrong!");
       }
     } catch (error) {
-      message.error(error.response?.data?.message || "Failed to submit feedback!");
+      toast.error(error.response?.data?.message || "Failed to submit feedback!");
     }
   };
 
@@ -37,6 +37,7 @@ function Feedback() {
   return (
     <>
       <Navbar />
+      
 
       {/* Hero Section */}
       <section className="contact-hero">
@@ -106,8 +107,11 @@ function Feedback() {
       </div>
 
       <Footer />
+     
     </>
   );
 }
 
 export default Feedback;
+
+

@@ -1,7 +1,3 @@
-// 
-
-
-
 
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router";
