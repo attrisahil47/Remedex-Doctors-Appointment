@@ -4,16 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node --max-old-space-size=2048 node_modules/vite/bin/vite.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-oauth/google": "^0.12.1",
+    "@react-oauth/google": "^0.12.2",
     "@tailwindcss/vite": "^4.0.9",
     "antd": "^5.24.2",
     "axios": "^1.8.1",
+    "jwt-decode": "^4.0.0",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.507.0",
     "react": "^19.0.0",

@@ -10,7 +10,7 @@ const routes = require("./Routes")
 backend.use(express.json());
  
 backend.use(cors({
-    origin: "*",
+    origin: ["https://frontend-gawl.onrender.com", "https://admin-kvgn.onrender.com"],
     methods: ["GET", "PUT", "PATCH", "POST", "DELETE"]
 
 })

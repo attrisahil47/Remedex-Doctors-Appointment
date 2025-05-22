@@ -11,7 +11,7 @@ import { useAuth } from "../AuthContext";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
 const clientId =
-  "166768133566-04ufqrfh2tre1nt5gppu3b9aahpu98vf.apps.googleusercontent.com"; // Your Google client ID
+  "166768133566-04ufqrfh2tre1nt5gppu3b9aahpu98vf.apps.googleusercontent.com";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -56,10 +56,8 @@ const Login = () => {
     console.log("Failed:", errorInfo);
   };
 
-  // Google login success handler
   const handleGoogleSuccess = async (credentialResponse) => {
     toast.dismiss();
-    console.log("Google login success response:", credentialResponse);
 
     if (!credentialResponse || !credentialResponse.credential) {
       toast.error("❌ No credential returned by Google.", {
@@ -71,12 +69,9 @@ const Login = () => {
     }
 
     try {
-      // Post Google token to your backend
       const res = await axiosInstance.post(`${baseURL}/auth/google-login`, {
         token: credentialResponse.credential,
       });
-
-      console.log("Google login backend response:", res);
 
       if (res && res.status === 200) {
         toast.success("✅ Logged in successfully with Google!", {
@@ -94,8 +89,6 @@ const Login = () => {
         throw new Error("Unexpected server response.");
       }
     } catch (error) {
-      console.error("Google login error caught:", error);
-
       toast.error(
         `❌ Google login failed: ${
           error.response?.data?.message || error.message || "Unknown error"
@@ -175,7 +168,7 @@ const Login = () => {
             <GoogleLogin
               onSuccess={handleGoogleSuccess}
               onError={handleGoogleError}
-              useOneTap // optional, to enable Google One Tap sign-in popup
+              useOneTap
             />
           </GoogleOAuthProvider>
         </div>

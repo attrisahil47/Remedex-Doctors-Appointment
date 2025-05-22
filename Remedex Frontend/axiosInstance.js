@@ -1,7 +1,7 @@
 import axios from "axios";
 const instance =axios.create({
     baseURL:"https://backend-7yvd.onrender.com",
-    timeout:1000,
+    timeout:5000,
 })
 
 instance.interceptors.request.use(

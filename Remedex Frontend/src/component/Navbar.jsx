@@ -9,9 +9,11 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const { user, logout } = useAuth();
+
   const navigate = useNavigate();
 
   useEffect(() => {
+    
     const handleResize = () => {
       const isNowMobile = window.innerWidth < 768;
       setIsMobile(isNowMobile);
